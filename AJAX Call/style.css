@@ -5,9 +5,8 @@
     box-sizing: border-box;
 }
 
-/* Set base font size for easy rem calculations */
 html {
-    font-size: 62.5%; /* 1rem = 10px */
+    font-size: 62.5%; 
     box-sizing: border-box;
 }
 
