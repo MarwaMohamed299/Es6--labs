@@ -1,0 +1,119 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set base font size for easy rem calculations */
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+/* Country cards container */
+.countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Country Card Styling */
+.country {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 30rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.country:hover {
+    transform: translateY(-0.5rem);
+}
+
+/* Country Image Styling */
+.country__img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+/* Country Data Styling */
+.country__data {
+    padding: 2rem;
+}
+
+/* Country name styling */
+.country__name {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Country region styling */
+.country__region {
+    font-size: 1.8rem;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+/* Info rows for population, language, currency */
+.country__row {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.country__row span {
+    margin-right: 0.5rem;
+}
+
+/* Add some space for the images container */
+.images {
+    margin-top: 2rem;
+}
+
+/* Responsive design: Adjust flex-direction and spacing */
+@media (max-width: 768px) {
+    .countries {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .country {
+        width: 100%;
+        max-width: none;
+    }
+}
