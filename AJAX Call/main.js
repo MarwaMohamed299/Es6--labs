@@ -2,10 +2,8 @@ const btn = document.querySelector('.btn-country');
 document.addEventListener('DOMContentLoaded', function () {
     const countriesContainer = document.querySelector('.countries');
 
-    const getCountryData = function(country){
-
-        let request = new XMLHttpRequest();
-    request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
+    let request = new XMLHttpRequest();
+    request.open('GET', 'https://restcountries.com/v3.1/name/portugal');
     request.send();
 
     request.addEventListener('load', function () {
@@ -28,14 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         countriesContainer.insertAdjacentHTML('beforeend', html);
         countriesContainer.style.opacity = 1;
     });
-
-    }
-    
-    getCountryData('egypt');
-    getCountryData('palestine');
-    getCountryData('saudi arabia');
-
-
 });
 
  
+
