@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onkeypress="(stopClock())">
+    <!-- 1 -->
+    <input type="text" onkeydown="getPressedKey(event)" ><br><br>
+
+    <!-- 2 -->
+    
+    <input type="button" value="start clock"  onclick="startClock(event)">
+    <p> press alt + w to stop clock </p>
+    <div id="clock"></div>
+
+
+    <!-- 3 -->
+
+
+     <img src="https://th.bing.com/th/id/OIP.qDvAlhidTBzXiGyDfq_O0gHaE7?w=211&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" id="img1">
+     <img src="https://th.bing.com/th/id/OIP.HxV79tFMPfBAIo0BBF-sOgHaEy?w=220&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" id="img2">
+     <img src="https://th.bing.com/th/id/OIP.GPFEY6kfgxbsja6gmrW6rwHaE7?rs=1&pid=ImgDetMain" id="img3">
+     <div id="score">Score: 0</div>
+
+
+     <!-- 4- -->
+
+     <form method="get" action="Welcome.html">
+        <label for="name">Enter your Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="password">Enter your Password:</label>
+        <input type="password" id="password" name="password">
+        
+        <input type="submit" value="login" onclick="login()">
+    </form>
+    
+    <script src="main.js"></script>
+</body>
+</html>
