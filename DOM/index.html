@@ -5,7 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<form  id="form" method="get" action="thanks.html"  onsubmit="validateForm(event)" >
+
+<label> Email : </label>
+<input type="text" value=" "  id="email"  onblur="validateEmail(this)">
+
+<span id="EmailMessage"> </span><br>
+
+<label> Password : </label>
+<input type="password" value=""  id="pwd">
+
+<span id="PasswordMessage"> </span><br>
+
+
+<input type="submit">
+</form>
+
+
+
 <body>
-    <script src="main.js"></script>
+    <script>
+        function validateEmail(inp){
+            if(inp.value.length < 3){
+                document.querySelector("#EmailMessage").innerHTML="Email Not Valid";
+                inp.focus();
+            }
+            else
+            {
+                document.querySelector("#EmailMessage").innerHTML=" ";
+            }
+        }
+
+        function validateForm(ev){
+            ev.preventDefault();
+            if(document.querySelector("#email").value.length >=3){
+                ev.target.submit();            
+            }
+        }
+    </script>
 </body>
 </html>
