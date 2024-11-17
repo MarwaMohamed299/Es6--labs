@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 1 -->
+    <img src="invalid.jpg" onerror="handleError()">
+
+    <!-- 2 -->
+    <img src="invalid.jpg" onerror="(function() {alert('Error Ocurred')})()">
+
+    <label>Enter two Numbers </label>
+    <input type="number" placeholder="num1" id="num1" >  <input type="number" placeholder="num2" id="num2" onblur="Calculate()" >
+    
 </head>
 <body>
     <script src="main.js"></script>
