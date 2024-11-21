@@ -10,59 +10,7 @@ function handleError(){
 
 //Anonymous
 
-// 2.Make an Interval that runs each second, and executes logTest function that writes 
-//the current time each time it called in the console, and handle the function to
-// be literal function to be passed to the first parameter to setInterval (Don’t define a function and then pass its name,
-// define the function literally in the first parameter of setInterval()).
-
-setInterval(function(){
-    var date = new Date();
-    console.log(date.toLocaleTimeString());
-},1000);
-
-
-// a.Why literal function is better than defining a declarative function, and then passes its name in that case?
-    // Better Readability and clarity since it is used only in one place . Also to avoid global scope issue .
-
-// 3.Make a script in a body, and ask the user to enter 2 numbers, and then make a Dynamic function
- //to take 2 numbers as parameters and alert the sum of 2 numbers and execute the function.
- Calculate = function() {
-    const num1 = parseFloat(prompt("Enter the first number:"));
-    const num2 = parseFloat(prompt("Enter the second number:"));
-    const sum = num1 + num2;
-    alert(`Sum: ${sum}`);
-};
-
-Calculate();
-
-// a.Re-declare the function (assign it to the same variable, without deleting the prev. function) 
-//to alert the subtract of the 2 numbers, and execute it.
-
-Calculate = function() {
-    const num1 = parseFloat(prompt("Enter the first number:"));
-    const num2 = parseFloat(prompt("Enter the second number:"));
-    const difference = num1 - num2;
-    alert(`Difference: ${difference}`);
-};
-
-Calculate();
-
-// b.Re-declare it to alert the multiply of the 2 numbers and execute it.
-Calculate = function() {
-    const num1 = parseFloat(prompt("Enter the first number:"));
-    const num2 = parseFloat(prompt("Enter the second number:"));
-    const mul = num1 * num2;
-    alert(`Difference: ${mul}`); 
-}
-
-// c.Re-declare it to alert the division of the 2 numbers and execute it.
-Calculate = function() {
-    const num1 = parseFloat(prompt("Enter the first number:"));
-    const num2 = parseFloat(prompt("Enter the second number:"));
-    const product = num1 / num2;
-    alert(`Product: ${product}`);
-};
-
+ 
 // Calculate();
 
 // d.Why the Dynamic function is the best type for such this case?
