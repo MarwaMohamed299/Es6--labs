@@ -75,3 +75,131 @@ static WhoAmI() {
 // ii)https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know
 // iii) https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns
 // iv)https://www.dofactory.com/javascript/design-patterns
+
+//Module Design Pattern
+                                                                                                                                                                                                                                                                                                                                          
+var testModule = (function() {
+    var counter = 0;
+    return {
+      incrementCounter: function() {
+        return ++counter;
+      },
+      resetCounter: function() {
+        counter = 0;
+      }
+    };
+  })();
+
+
+  //Mixin Design Patteren
+
+  var Person = function(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.gender = 'male';
+};
+
+var Superhero = function(firstName, lastName, powers) {
+    Person.call(this, firstName, lastName);
+    this.powers = powers;
+};
+
+Superhero.prototype = Object.create(Person.prototype);
+Superhero.prototype.constructor = Superhero; 
+
+var superman = new Superhero('Clark', 'Kent', ['flight', 'heat-vision']);
+
+console.log(superman);
+
+
+
+  //Decorator
+
+  function MacBook() {
+    this.cost = function() {
+      return 997;
+    };
+    this.screenSize = function() {
+      return 11.6;
+    };
+  }
+  
+  // Decorator 1
+  
+  function Memory(macbook) {
+    var v = macbook.cost();
+    macbook.cost = function() {
+      return v + 75;
+    };
+  }
+  
+  // Decorator 2
+  
+  function Engraving(macbook) {
+    var v = macbook.cost();
+    macbook.cost = function() {
+      return v + 200;
+    };
+  }
+  
+  // Decorator 3
+  
+  function Insurance(macbook) {
+    var v = macbook.cost();
+    macbook.cost = function() {
+      return v + 250;
+    };
+  }
+  
+  var mb = new MacBook();
+  
+  Memory(mb);
+  Engraving(mb);
+  Insurance(mb);
+  
+  mb.cost();
+
+
+  //Observer 
+class Subject {
+    constructor() {
+      this.observers = []; 
+    }
+  
+    subscribe(observer) {
+      this.observers.push(observer);
+    }
+  
+    unsubscribe(observer) {
+      this.observers = this.observers.filter((obs) => obs !== observer);
+    }
+  
+    notify(data) {
+      this.observers.forEach((observer) => observer.update(data));
+    }
+  }
+  
+  class Observer {
+    constructor(name) {
+      this.name = name;
+    }
+  
+    update(data) {
+      console.log(`${this.name} received update: ${data}`);
+    }
+  }
+  
+  const subject = new Subject();
+  
+  const observer1 = new Observer("Observer 1");
+  const observer2 = new Observer("Observer 2");
+  
+  subject.subscribe(observer1);
+  subject.subscribe(observer2);
+  
+  subject.notify("New video uploaded!");
+  
+  subject.unsubscribe(observer1);
+  
+  subject.notify("Another video uploaded!");
+  
