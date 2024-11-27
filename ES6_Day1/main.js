@@ -1,6 +1,21 @@
 // 1.Try arrow function:
+ hello = () =>{
+    console.log(`Hello , World !! `)
+ }
+ hello();
+ /*=============================================== */
+ let  numArr = [ 1 , 2 , 4 , 12 , 15 , 13 , 22]
 // a.With Array.filter() function, to return the odd numbers from an array.
+ let odd = numArr.filter(elem=>elem%2 != 0 );
+ console.log(odd);
 // b.With array.forech() to print the even values.
+let getEvenValues = (el) => {
+    if (el % 2 === 0) {
+        console.log(el);
+    }
+};
+numArr.forEach(getEvenValues);
+
 // c.With array.map() to print the square of each element.
 // d.“An arrow function does not create its own this context, unlike the normal literal function.” – Explain with demo.
 // 2.Try for…in, for…of and .foreach() with an array.
