@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onClick="getGeoLocation()"> get Location</button>
+    <button onClick="goToLocation()"> goToLocation</button>
+    <p id="lat"></p>
+    <p id="lon"></p>
+
+<script>
+    var longitudeCoords = 0 ;
+    var latitudeCoords = 0 ;
+
+    function getGeoLocation(){
+        navigator.geolocation.getCurrentPosition(function(pos){
+            latitudeCoords = pos.coords.latitude;
+            longitudeCoords = pos.coords.longitude;
+
+            document.getElementById("lat").innerHTML = "Latitude:" + latitudeCoords
+            document.getElementById("lon").innerHTML = "Longitude:" + latitudeCoords
+
+        });  
+    }
+
+    function goToLocation(){
+        var url = "http://maps.google.com/maps?q=" + longitudeCoords +",+" + latitudeCoords
+        window.open(url,'_blank');
+    }
+</script>    
+</body>
+</html>
